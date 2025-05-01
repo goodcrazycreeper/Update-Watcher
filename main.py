@@ -1,4 +1,3 @@
-import modules.roblox_api as roblox_api
+import modules.universe as universe
 
-roblox_api.getUniverseData(124180448122765)
-
+universe.getUniverseData(124180448122765)

@@ -172,6 +172,5 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
-
-# Production files
+# Hide production folder
 PRODUCTION FOLDER/
