@@ -15,11 +15,9 @@ finally:
         print("\33[33mWARN: NO .ENV FOUND! CREATE .ENV IN MAIN DIRECTORY\33[0m")
         sys.exit() # If X_API_KEY returns None script will exit
 
-
-
 class Subplace(universe.Universe): # A classed named subplace, which belongs to a universe which defines a place 
-    def __init__(self, universeId, rootPlaceId, gameLink, updateTime, displayName:str, isRootPlace: bool):
-        super().__init__(universeId, rootPlaceId, gameLink)
+    def __init__(self, universeId, rootPlaceId, path, updateTime, displayName:str, isRootPlace: bool):
+        super().__init__(universeId, rootPlaceId, path)
         self.displayName = displayName
         self.isRootPlace = isRootPlace # Bool
         self.updateTime = updateTime
