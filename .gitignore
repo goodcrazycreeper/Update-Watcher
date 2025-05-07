@@ -174,3 +174,4 @@ cython_debug/
 .pypirc
 # Hide production folder
 PRODUCTION FOLDER/
+.vscode
