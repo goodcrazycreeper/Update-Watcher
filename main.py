@@ -1,5 +1,5 @@
-import modules 
-from modules import reqmethods, classes, env
+import utils 
+from utils import reqmethods, classes, env
 from dotenv import load_dotenv
 # import os
 # load_dotenv()
