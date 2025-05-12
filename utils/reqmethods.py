@@ -1,7 +1,7 @@
 # reqmethods.py
 """
-Universe.py responsible for retrieving universe data such as number of subplaces.
-Contains helper functions and methods for api calls
+# Universe.py\nResponsible for retrieving universe data such as number of subplaces.
+Contains helper functions and methods for API calls
 """
 import requests
 

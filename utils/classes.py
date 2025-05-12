@@ -1,9 +1,9 @@
 """ 
 This module is responsible for getting the dates of when a subplace in a universe was updated.
 """
-import reqmethods as req
-from reqmethods import GetUniverseData, GetMethod
-from env import loadEnvironmentVar
+import utils.reqmethods as req
+from utils.reqmethods import GetUniverseData, GetMethod
+from utils.env import loadEnvironmentVar
 
 X_API_KEY = loadEnvironmentVar("KEY")
 
