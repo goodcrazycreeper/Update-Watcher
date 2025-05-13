@@ -7,7 +7,11 @@ import requests
 
 def CheckKeyExists(dict, key): 
     """Ensures that a key exists before accessing the given key."""
-    return key in dict # Check if the 'address' key exists in the dictionary
+    if dict != None:
+        return key in dict # Check if the 'address' key exists in the dictionary
+    else:
+        return False
+    
 
 def GetMethod(*args,Debug: bool = False,**kwargs): # Returns dictionary: "data"
     """
