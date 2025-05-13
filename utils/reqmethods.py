@@ -9,16 +9,23 @@ def CheckKeyExists(dict, key):
     """Ensures that a key exists before accessing the given key."""
     return key in dict # Check if the 'address' key exists in the dictionary
 
-def GetMethod(*args,**kwargs): # Returns dictionary: "data"
+def GetMethod(*args,Debug: bool = False,**kwargs): # Returns dictionary: "data"
     """
     Returns a dictionary, where "data" is the json from the GET request method and status is the status code of the GET method.
-    Returns a dictionary, where and if an exception occurs, returns "data" and None and status code as -1.
+    Returns a dictionary, where and if an exception occurs, returns "data" as None and status code as -1.
+    Dictionary is optional, where debug is false pass json data from get()
     """
     try: Response = requests.get(*args,**kwargs)
     except Exception as e:
         print(f"exception as: {e} in {__name__}")
-        return {"data": None, "status": -1} # Return none when error occurs
-    return {"data": Response.json(), "status": Response.status_code}
+        if Debug == True:
+            return None
+        else: 
+            return {"data": None, "status": -1} # Return none when error occurs
+    if Debug == True:
+        return Response.json()
+    else:
+        return {"data": Response.json(), "status": Response.status_code}
     
 def GetUniverseId(PlaceId) -> int:
     """# GetUniverseId:
@@ -26,7 +33,7 @@ def GetUniverseId(PlaceId) -> int:
     Returns -1 if the universeId field does not exist.
     """
     # Dependencies: GetMethod, CheckKeyExists.
-    Response = GetMethod(f'https://apis.roblox.com/universes/v1/places/{PlaceId}/universe')["data"]
+    Response = GetMethod(f'https://apis.roblox.com/universes/v1/places/{PlaceId}/universe', Debug=True)
     if CheckKeyExists(Response,"universeId") == True:
         Response = Response["universeId"]
         if  Response != "null":
