@@ -1,6 +1,7 @@
-import utils 
-from utils import  classes, env
+import utils
+from utils import classes, env
 from dotenv import load_dotenv
+
 # import os
 # load_dotenv()
 # X_API_KEY = {"X-API-KEY":os.getenv("X-API-KEY")}
